@@ -34,7 +34,7 @@ body {
 h1 {
   margin: 0;
   padding: 20px 0;
-  color: #20C997;
+  color: #FFC107;
   text-shadow: 3px 3px 1px #E0E0E0;
 }
 
@@ -54,4 +54,16 @@ img {
   inline-size: -webkit-fill-available;
   display: block;
   margin: 0 auto;
+}
+
+#top-menu-bar {
+  margin: 0;
+  padding: 10px 10px;
+  display: block;
+  background-color: #20C997;
+}
+
+#top-menu-bar ul {
+  display: flex;
+  justify-content: space-around;
 }
