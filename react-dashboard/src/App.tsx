@@ -5,10 +5,11 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
+  let navItems = ["Home", "About", "Services", "Contact"];
 
   return (
     <div>
-      <NavBar />
+      <NavBar brandName="C Works" imageSrc="#" navItems={navItems} />
       {alertVisible && (
         <Alert onClose={() => setAlertVisible(false)}>Hello World</Alert>
       )}
