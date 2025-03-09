@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 interface NavBarProps {
   brandName: string;
   imageSrc: string;
-  navItems?: string[];
+  navItems?: { name: string; path: string }[];
 }
 
 const NavBar = ({ brandName, imageSrc, navItems }: NavBarProps) => {
@@ -13,16 +14,16 @@ const NavBar = ({ brandName, imageSrc, navItems }: NavBarProps) => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src={imageSrc}
-            alt="C"
+            alt="Brand Logo"
             width="30"
             height="24"
             className="d-inline-block align-text-top"
           />
           <span className="fw-bold ms-2">{brandName}</span>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -39,17 +40,17 @@ const NavBar = ({ brandName, imageSrc, navItems }: NavBarProps) => {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto mb-2 mb-md-1">
-            {navItems?.map((items, index) => (
+            {navItems?.map((item, index) => (
               <li className="nav-item" key={index}>
-                <a
+                <Link
                   className={`nav-link ${
                     index === selectedIndex ? "active fw-bold" : ""
                   }`}
-                  href="#"
+                  to={item.path}
                   onClick={() => setSelectedIndex(index)}
                 >
-                  {items}
-                </a>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
