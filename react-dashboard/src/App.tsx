@@ -7,6 +7,10 @@ import Pricing from "./pages/Pricing";
 import FAQs from "./pages/FAQs";
 import About from "./pages/About";
 import Footer from "./components/Footer";
+import Projects from "./pages/projects";
+import Finances from "./pages/projects/finances";
+import Achievements from "./pages/projects/achievements";
+import Works from "./pages/projects/works";
 
 function App() {
   const navItems = [
@@ -15,6 +19,7 @@ function App() {
     { name: "Pricing", path: "/pricing" },
     { name: "FAQs", path: "/faqs" },
     { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
   ];
 
   const sections = [
@@ -50,13 +55,17 @@ function App() {
   return (
     <Router>
       <NavBar brandName="My Brand" imageSrc="/vite.svg" navItems={navItems} />
-      <Container>
+      <Container className="my-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/finances" element={<Finances />} />
+          <Route path="/project/achievements" element={<Achievements />} />
+          <Route path="/project/works" element={<Works />} />
         </Routes>
       </Container>
       <Footer
